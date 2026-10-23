@@ -73,19 +73,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 16px;
             position: relative;
             z-index: 2;
         }
 
         .card {
             width: 100%;
-            max-width: 800px;
-            padding: 40px 24px;
+            max-width: 850px;
+            padding: 40px 20px;
             text-align: center;
             border: 3px solid white;
             border-radius: 35px;
-            background: rgba(255, 248, 253, .94);
+            background: rgba(255, 248, 253, .96);
             box-shadow:
                 0 18px 0 rgba(194, 0, 103, .13),
                 0 25px 60px rgba(128, 0, 66, .2);
@@ -225,7 +225,7 @@
         h1 {
             font-family: 'Fredoka', sans-serif;
             color: #ff168c;
-            font-size: clamp(36px, 8vw, 75px);
+            font-size: clamp(34px, 7vw, 65px);
             line-height: 1.1;
             text-shadow: 3px 4px #ffd0e8, 6px 7px #ff83c2;
             margin: 10px 0;
@@ -234,13 +234,13 @@
         h1 span {
             display: block;
             color: #b942f5;
-            margin-top: 8px;
+            margin-top: 6px;
             text-shadow: 3px 4px #efd0ff, 6px 7px #ffb5df;
         }
 
         .subtitle {
-            margin: 20px auto 10px;
-            font-size: 17px;
+            margin: 15px auto 10px;
+            font-size: 16px;
             line-height: 1.5;
             max-width: 550px;
         }
@@ -285,7 +285,7 @@
 
         .video-box {
             width: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 16 / 10;
             border: 3px dashed #ff83c2;
             border-radius: 20px;
             background: linear-gradient(135deg, #ffe7f4, #ffd1e9);
@@ -305,20 +305,21 @@
 
         .video-box h2 {
             color: #e60078;
-            font-size: 19px;
+            font-size: 18px;
             text-align: center;
         }
 
         .video-box p {
-            font-size: 14px;
+            font-size: 13px;
             text-align: center;
         }
 
-        /* --- PERBAIKAN UTAMA: Agar Video Responsif & Nyaman di HP --- */
+        /* --- PEMBESARAN & PERLUASAN AREA VIDEO AGAR LEGA DI HP --- */
         .video-container-wrapper {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 4 / 3; /* Dibuat lebih tinggi/luas agar tidak sempit di HP */
+            max-height: 70vh;
             background: #160611;
             border: 3px solid white;
             border-radius: 20px;
@@ -340,7 +341,7 @@
         video {
             display: none;
             width: 100%;
-            max-height: 55vh;
+            max-height: 65vh;
             border: 3px solid white;
             border-radius: 20px;
             background: #160611;
@@ -379,41 +380,46 @@
             }
         }
 
-        /* Penyesuaian khusus layar HP kecil */
         @media (max-width: 480px) {
             .page {
-                padding: 12px;
+                padding: 10px;
             }
 
             .card {
-                padding: 25px 16px;
-                border-radius: 24px;
+                padding: 22px 14px;
+                border-radius: 22px;
             }
 
             .characters-container {
-                gap: 10px;
-                margin: 15px auto 10px;
+                gap: 8px;
+                margin: 12px auto 10px;
             }
 
             .speech-bubble {
-                font-size: 10.5px;
+                font-size: 10px;
                 padding: 6px 8px;
                 border-radius: 12px;
-                margin-bottom: 8px;
+                margin-bottom: 6px;
             }
 
             .char-img {
-                width: 95px;
-                height: 95px;
+                width: 90px;
+                height: 90px;
                 border-radius: 16px;
             }
 
             .cap {
-                font-size: 55px;
+                font-size: 50px;
             }
 
             .subtitle {
-                font-size: 15px;
+                font-size: 14px;
+            }
+
+            /* Di HP, kotak video dibuat lebih lapang lagi agar sangat nyaman dilihat */
+            .video-container-wrapper {
+                aspect-ratio: 1 / 1; /* Kotak proporsional yang luas di layar HP */
+                max-height: 65vh;
             }
         }
     </style>
@@ -484,8 +490,9 @@
 
             <div class="label">YOUR SPECIAL MOMENT ✦</div>
 
-            <h1 style="font-size:clamp(30px, 6vw, 55px); margin-top:15px">
-                A LITTLE SURPRISE
+            <!-- TEKS DIGANTI MENJADI "A LITTLE DOCUMENTATION FOR YOU" -->
+            <h1>
+                A LITTLE DOCUMENTATION
                 <span>FOR YOU!</span>
             </h1>
 
@@ -500,7 +507,7 @@
                 <p>Spesial untuk hari kelulusanmu 🌷</p>
             </div>
 
-            <!-- Pembungkus Video Google Drive agar pas dan rapi di HP -->
+            <!-- Pembungkus Video Google Drive yang Diperbesar & Diperluas -->
             <div class="video-container-wrapper" id="videoWrapper">
                 <iframe class="drive-video-frame" src="https://drive.google.com/file/d/1oTPvMSV1PHU2dnfXno0gGFOp5D6mlwRK/preview" allow="autoplay" allowfullscreen></iframe>
             </div>
@@ -589,7 +596,7 @@
             window.scrollTo(0, 0);
         }
 
-        // Fungsi Memunculkan Video Google Drive dengan pembungkus yang pas di HP
+        // Fungsi Memunculkan Video Google Drive dengan ukuran lebih luas di HP
         function playDriveVideo() {
             const videoWrapper = document.getElementById("videoWrapper");
             const placeholder = document.getElementById("videoPlaceholder");
