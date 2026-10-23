@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Graduation from Vergio 💗</title>
+    <title>Happy Graduation from Vergio </title>
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -73,7 +73,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 12px;
+            padding: 16px;
             position: relative;
             z-index: 2;
         }
@@ -81,7 +81,7 @@
         .card {
             width: 100%;
             max-width: 850px;
-            padding: 35px 18px;
+            padding: 40px 20px;
             text-align: center;
             border: 3px solid white;
             border-radius: 35px;
@@ -283,51 +283,52 @@
             display: none;
         }
 
-        /* --- KOTAK PEMUTAR VIDEO YANG DIPERBESAR & DIPANJANGKAN KE BAWAH --- */
+        /* --- KOTAK PEMUTAR VIDEO YANG DIPERBESAR DAN TINGGI DI HP --- */
         .video-box {
             width: 100%;
-            height: 60vh; /* Menggunakan 60% tinggi layar HP agar sangat tinggi & lega */
-            min-height: 380px;
+            height: 55vh; /* Menggunakan 55% tinggi layar HP agar jauh lebih besar */
+            min-height: 350px;
             border: 3px dashed #ff83c2;
-            border-radius: 25px;
+            border-radius: 22px;
             background: linear-gradient(135deg, #ffe7f4, #ffd1e9);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 12px;
-            padding: 20px;
+            gap: 10px;
+            padding: 15px;
             margin: 20px 0;
             cursor: pointer;
         }
 
         .play-icon {
-            font-size: 65px; /* Ikon Play diperbesar agar mudah dipencet */
+            font-size: 60px; /* Ikon Play diperbesar */
         }
 
         .video-box h2 {
             color: #e60078;
-            font-size: 22px;
+            font-size: 20px;
             text-align: center;
         }
 
         .video-box p {
-            font-size: 15px;
+            font-size: 14px;
             text-align: center;
         }
 
+        /* --- PEMBUNGKUS FRAME VIDEO DIPERBESAR --- */
         .video-container-wrapper {
             position: relative;
             width: 100%;
-            height: 65vh; /* Dibuat sangat tinggi dan lega di HP */
-            min-height: 400px;
+            height: 60vh; /* Ukuran frame diperbesar agar lega */
+            min-height: 380px;
             background: #160611;
             border: 3px solid white;
-            border-radius: 25px;
+            border-radius: 22px;
             overflow: hidden;
             margin: 20px 0;
             display: none;
-            box-shadow: 0 8px 25px rgba(142, 40, 102, 0.2);
+            box-shadow: 0 8px 20px rgba(142, 40, 102, 0.15);
         }
 
         .drive-video-frame {
@@ -339,11 +340,12 @@
             border: none;
         }
 
+        /* --- TEKS ASLI ANDA "👆 buka video diatas" --- */
         .instruction-text {
             font-size: 20px;
             font-weight: 800;
             color: #e60078;
-            margin: 15px 0 10px;
+            margin: 20px 0 10px;
             text-shadow: 1px 1px #ffd0e8;
             letter-spacing: 0.5px;
         }
@@ -365,12 +367,12 @@
 
         @media (max-width: 480px) {
             .page {
-                padding: 8px;
+                padding: 10px;
             }
 
             .card {
-                padding: 25px 14px;
-                border-radius: 24px;
+                padding: 22px 14px;
+                border-radius: 22px;
             }
 
             .characters-container {
@@ -421,6 +423,7 @@
 
             <div class="label">A LITTLE SURPRISE FOR YOU ✦</div>
 
+            <!-- GAMBAR KEDUA KARAKTER HEWAN DENGAN BALON PERCAKAPAN -->
             <div class="characters-container">
                 
                 <!-- Uchup -->
@@ -449,11 +452,12 @@
             </h1>
 
             <p class="subtitle">
-                A special little page to celebrate your big day. I'm so happy for your achievement, it's so nice to see you smiling like you always do, and I'm genuinely overjoyed! 💗
+                A special little page to celebrate your big day.
+                You deserve all the happiness in the world! 💗
             </p>
 
             <button class="primary" onclick="continuePage()">
-                Lihat Video Wisuda 🎬 →
+                Lihat Video Disebelah 🎬 →
             </button>
 
             <div class="hint">
@@ -475,23 +479,24 @@
             </h1>
 
             <p class="subtitle">
-                Isinya cuma video aku aja sih, nikmatin ya! 🌷🎀
+                Isinya cuma video aku aja sih.🎀
             </p>
 
-            <!-- KOTAK PEMUTAR VIDEO GOOGLE DRIVE YANG BESAR -->
+            <!-- KOTAK PEMUTAR VIDEO GOOGLE DRIVE -->
             <div class="video-box" id="videoPlaceholder" onclick="playDriveVideo()">
                 <div class="play-icon">▶️</div>
-                <h2>Klik untuk Putar Video Wisuda</h2>
-                <p>Spesial untuk hari kelulusanmu 🌷</p>
+                <h2>Klik untuk Putar Video yaa </h2>
+                <p>Enjoy the video 🌷</p>
             </div>
 
-            <!-- Frame Video Google Drive yang Diperbesar -->
+            <!-- Pembungkus Video Google Drive yang Diperbesar -->
             <div class="video-container-wrapper" id="videoWrapper">
                 <iframe class="drive-video-frame" src="https://drive.google.com/file/d/1oTPvMSV1PHU2dnfXno0gGFOp5D6mlwRK/preview" allow="autoplay" allowfullscreen></iframe>
             </div>
 
+            <!-- TEKS ASLI ANDA KEMBALI SEPERTI SEMULA -->
             <div class="instruction-text">
-                👆 buka video diatas
+                👆 buka video diatas yaa, bisa diperbesar juga kok, semoga suka sama hadiah nyaa
             </div>
 
             <p class="subtitle" style="margin-top: 15px;">
