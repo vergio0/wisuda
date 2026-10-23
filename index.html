@@ -308,6 +308,18 @@
             font-size: 22px;
         }
 
+        /* Styling untuk iframe Google Drive */
+        .drive-video-frame {
+            display: none;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 3px solid white;
+            border-radius: 20px;
+            background: #160611;
+            margin: 25px 0;
+        }
+
+        /* Video lokal cadangan */
         video {
             display: none;
             width: 100%;
@@ -456,18 +468,22 @@
                 Ada sesuatu yang spesial untuk kamu. 🌷🎀
             </p>
 
-            <!-- KOTAK PEMUTAR VIDEO (DIPASANGKAN VIDEO GOOGLE DRIVE SEBAGAI DEFAULT) -->
+            <!-- KOTAK PEMUTAR VIDEO GOOGLE DRIVE -->
             <div class="video-box" id="videoPlaceholder" onclick="playDriveVideo()">
                 <div class="play-icon">▶️</div>
                 <h2>Klik untuk Putar Video Wisuda</h2>
                 <p>Spesial untuk hari kelulusanmu 🌷</p>
             </div>
 
-            <video id="graduationVideo" controls playsinline src="https://drive.google.com/uc?export=download&id=1UUdLgWy3oJvNJ0bD_DNSIybRJ_cMUCup"></video>
+            <!-- Google Drive Iframe dengan Link Baru -->
+            <iframe id="driveVideo" class="drive-video-frame" src="https://drive.google.com/file/d/1oTPvMSV1PHU2dnfXno0gGFOp5D6mlwRK/preview" allow="autoplay"></iframe>
 
-            <!-- TOMBOL UNTUK PILIH VIDEO MANUAL TETAP ADA -->
+            <!-- Tag Video Lokal Cadangan -->
+            <video id="graduationVideo" controls playsinline></video>
+
+            <!-- TOMBOL PILIH VIDEO MANUAL DARI PERANGKAT -->
             <label class="upload-label" for="videoFile">
-                📹 Pilih Video dari Perangkat
+                📹 Pilih Video dari Perangkat Lain
             </label>
 
             <input type="file" id="videoFile" accept="video/*">
@@ -546,20 +562,20 @@
             window.scrollTo(0, 0);
         }
 
-        // Fungsi Memutar Video Google Drive
+        // Fungsi Memunculkan Video Google Drive saat kotak diklik
         function playDriveVideo() {
-            const video = document.getElementById("graduationVideo");
+            const driveFrame = document.getElementById("driveVideo");
             const placeholder = document.getElementById("videoPlaceholder");
 
             placeholder.style.display = "none";
-            video.style.display = "block";
-            video.play();
+            driveFrame.style.display = "block";
         }
 
         // Fitur Pilih Video Manual dari Perangkat
         const videoFile = document.getElementById("videoFile");
         const video = document.getElementById("graduationVideo");
         const placeholder = document.getElementById("videoPlaceholder");
+        const driveFrame = document.getElementById("driveVideo");
 
         let currentVideoURL = null;
 
@@ -574,6 +590,7 @@
 
             currentVideoURL = URL.createObjectURL(file);
 
+            driveFrame.style.display = "none"; 
             video.src = currentVideoURL;
             video.style.display = "block";
             placeholder.style.display = "none";
