@@ -133,7 +133,6 @@
             max-width: 220px;
         }
 
-        /* Balon Percakapan */
         .speech-bubble {
             position: relative;
             background: #ffffff;
@@ -233,3 +232,356 @@
         }
 
         h1 span {
+            display: block;
+            color: #b942f5;
+            margin-top: 12px;
+            text-shadow: 3px 4px #efd0ff, 6px 7px #ffb5df;
+        }
+
+        .subtitle {
+            margin: 25px auto 10px;
+            font-size: 19px;
+            line-height: 1.6;
+            max-width: 550px;
+        }
+
+        button {
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        button:hover {
+            transform: translateY(-4px) scale(1.04);
+        }
+
+        .primary {
+            color: white;
+            background: linear-gradient(100deg, #ff168c, #ff5bb5);
+            box-shadow: 0 6px 0 #d8006b;
+        }
+
+        .secondary {
+            color: #c12a86;
+            background: white;
+            border: 2px solid #ff9bcf;
+            box-shadow: 0 5px 0 #ffd0e8;
+        }
+
+        .hint {
+            color: #bd4a8d;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        #page2 {
+            display: none;
+        }
+
+        .video-box {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 3px dashed #ff83c2;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #ffe7f4, #ffd1e9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            cursor: pointer;
+        }
+
+        .play-icon {
+            font-size: 55px;
+        }
+
+        .video-box h2 {
+            color: #e60078;
+            font-size: 22px;
+        }
+
+        video {
+            display: none;
+            width: 100%;
+            max-height: 65vh;
+            border: 3px solid white;
+            border-radius: 20px;
+            background: #160611;
+            margin: 25px 0;
+        }
+
+        .upload-label {
+            display: inline-block;
+            cursor: pointer;
+            color: #c12a86;
+            background: #fff0f8;
+            border: 2px solid #ff9bcf;
+            border-radius: 30px;
+            padding: 12px 20px;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .confetti {
+            position: fixed;
+            top: -30px;
+            z-index: 10;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: .2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 35px 16px;
+                border-radius: 28px;
+            }
+
+            .characters-container {
+                gap: 12px;
+            }
+
+            .speech-bubble {
+                font-size: 11px;
+                padding: 8px 8px;
+                border-radius: 14px;
+            }
+
+            .cap {
+                font-size: 65px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+
+            .char-img {
+                width: 105px;
+                height: 105px;
+                border-radius: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="background" id="background"></div>
+
+    <div class="floating" style="top:8%;left:7%">🎀</div>
+    <div class="floating" style="top:12%;right:8%;animation-delay:.7s">⭐</div>
+    <div class="floating" style="bottom:12%;left:8%;animation-delay:1s">🌸</div>
+    <div class="floating" style="bottom:9%;right:7%;animation-delay:.5s">✨</div>
+
+    <!-- HALAMAN PERTAMA -->
+    <section class="page" id="page1">
+        <div class="card">
+
+            <div class="label">A LITTLE SURPRISE FOR YOU ✦</div>
+
+            <!-- GAMBAR KEDUA KARAKTER HEWAN DENGAN BALON PERCAKAPAN -->
+            <div class="characters-container">
+                
+                <!-- Uchup -->
+                <div class="char-wrapper uchup">
+                    <div class="speech-bubble">
+                        haloo akuu uchup keren yaa udah wisuda 🦊✨
+                    </div>
+                    <img src="uchup.png" alt="Uchup Fox" class="char-img" onerror="this.onerror=null; this.src='uchup.jpeg';">
+                </div>
+
+                <!-- Chupa -->
+                <div class="char-wrapper chupa">
+                    <div class="speech-bubble">
+                        haloo aku chupa semoga setelah wisuda ini kamu selalu mendapatkan banyak hal baik yaa lisa 🐰🌸
+                    </div>
+                    <img src="chupa.png" alt="Chupa Rabbit" class="char-img" onerror="this.onerror=null; this.src='chupa.jpeg';">
+                </div>
+
+            </div>
+
+            <div class="cap">🎓</div>
+
+            <h1>
+                HAPPY
+                <span>GRADUATION!</span>
+            </h1>
+
+            <p class="subtitle">
+                A special little page to celebrate your big day.
+                You deserve all the happiness in the world! 💗
+            </p>
+
+            <button class="primary" onclick="continuePage()">
+                Lihat Video Wisuda 🎬 →
+            </button>
+
+            <div class="hint">
+                ✨ tap the button to open your surprise ✨
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HALAMAN KEDUA -->
+    <section class="page" id="page2">
+        <div class="card">
+
+            <div class="label">YOUR SPECIAL MOMENT ✦</div>
+
+            <h1 style="font-size:clamp(35px,7vw,60px);margin-top:25px">
+                A LITTLE SURPRISE
+                <span>FOR YOU!</span>
+            </h1>
+
+            <p class="subtitle">
+                Ada sesuatu yang spesial untuk kamu. 🌷🎀
+            </p>
+
+            <!-- KOTAK PEMUTAR VIDEO (DIPASANGKAN VIDEO GOOGLE DRIVE SEBAGAI DEFAULT) -->
+            <div class="video-box" id="videoPlaceholder" onclick="playDriveVideo()">
+                <div class="play-icon">▶️</div>
+                <h2>Klik untuk Putar Video Wisuda</h2>
+                <p>Spesial untuk hari kelulusanmu 🌷</p>
+            </div>
+
+            <video id="graduationVideo" controls playsinline src="https://drive.google.com/uc?export=download&id=1UUdLgWy3oJvNJ0bD_DNSIybRJ_cMUCup"></video>
+
+            <!-- TOMBOL UNTUK PILIH VIDEO MANUAL TETAP ADA -->
+            <label class="upload-label" for="videoFile">
+                📹 Pilih Video dari Perangkat
+            </label>
+
+            <input type="file" id="videoFile" accept="video/*">
+
+            <p class="subtitle">
+                Congratulations on your graduation!
+                May your next chapter be full of beautiful things. ✨
+            </p>
+
+            <br>
+
+            <button class="secondary" onclick="backPage()">
+                ← Kembali ke Awal
+            </button>
+
+        </div>
+    </section>
+
+    <script>
+        const background = document.getElementById("background");
+
+        for (let i = 0; i < 40; i++) {
+            const star = document.createElement("span");
+
+            star.className = "sparkle";
+            star.textContent = ["✦", "✧", "✷", "☆"][
+                Math.floor(Math.random() * 4)
+            ];
+
+            star.style.left = Math.random() * 100 + "%";
+            star.style.top = Math.random() * 100 + "%";
+            star.style.animationDelay = Math.random() * 3 + "s";
+            star.style.fontSize = (10 + Math.random() * 20) + "px";
+
+            background.appendChild(star);
+        }
+
+        function confettiBurst() {
+            const decorations = [
+                "🌸", "✨", "🎀", "✦", "🎉", "⭐", "🌷"
+            ];
+
+            for (let i = 0; i < 60; i++) {
+                const confetti = document.createElement("span");
+
+                confetti.className = "confetti";
+                confetti.textContent = decorations[
+                    Math.floor(Math.random() * decorations.length)
+                ];
+
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.fontSize =
+                    (14 + Math.random() * 22) + "px";
+
+                confetti.style.animationDuration =
+                    (2 + Math.random() * 3) + "s";
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 5200);
+            }
+        }
+
+        function continuePage() {
+            document.getElementById("page1").style.display = "none";
+            document.getElementById("page2").style.display = "flex";
+
+            window.scrollTo(0, 0);
+            confettiBurst();
+        }
+
+        function backPage() {
+            document.getElementById("page2").style.display = "none";
+            document.getElementById("page1").style.display = "flex";
+
+            window.scrollTo(0, 0);
+        }
+
+        // Fungsi Memutar Video Google Drive
+        function playDriveVideo() {
+            const video = document.getElementById("graduationVideo");
+            const placeholder = document.getElementById("videoPlaceholder");
+
+            placeholder.style.display = "none";
+            video.style.display = "block";
+            video.play();
+        }
+
+        // Fitur Pilih Video Manual dari Perangkat
+        const videoFile = document.getElementById("videoFile");
+        const video = document.getElementById("graduationVideo");
+        const placeholder = document.getElementById("videoPlaceholder");
+
+        let currentVideoURL = null;
+
+        videoFile.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+
+            if (!file) return;
+
+            if (currentVideoURL) {
+                URL.revokeObjectURL(currentVideoURL);
+            }
+
+            currentVideoURL = URL.createObjectURL(file);
+
+            video.src = currentVideoURL;
+            video.style.display = "block";
+            placeholder.style.display = "none";
+
+            video.load();
+            video.play();
+        });
+    </script>
+
+</body>
+</html>
