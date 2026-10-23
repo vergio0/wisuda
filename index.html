@@ -73,7 +73,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 16px;
+            padding: 12px;
             position: relative;
             z-index: 2;
         }
@@ -81,7 +81,7 @@
         .card {
             width: 100%;
             max-width: 850px;
-            padding: 40px 20px;
+            padding: 35px 18px;
             text-align: center;
             border: 3px solid white;
             border-radius: 35px;
@@ -283,50 +283,51 @@
             display: none;
         }
 
+        /* --- KOTAK PEMUTAR VIDEO YANG DIPERBESAR & DIPANJANGKAN KE BAWAH --- */
         .video-box {
             width: 100%;
-            aspect-ratio: 16 / 9;
+            height: 60vh; /* Menggunakan 60% tinggi layar HP agar sangat tinggi & lega */
+            min-height: 380px;
             border: 3px dashed #ff83c2;
-            border-radius: 20px;
+            border-radius: 25px;
             background: linear-gradient(135deg, #ffe7f4, #ffd1e9);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 8px;
-            padding: 15px;
+            gap: 12px;
+            padding: 20px;
             margin: 20px 0;
             cursor: pointer;
         }
 
         .play-icon {
-            font-size: 45px;
+            font-size: 65px; /* Ikon Play diperbesar agar mudah dipencet */
         }
 
         .video-box h2 {
             color: #e60078;
-            font-size: 18px;
+            font-size: 22px;
             text-align: center;
         }
 
         .video-box p {
-            font-size: 13px;
+            font-size: 15px;
             text-align: center;
         }
 
-        /* --- FORMAT LANDSCAPE 16:9 YANG LEGA DAN NYAMAN DI HP --- */
         .video-container-wrapper {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9;
-            max-height: 65vh;
+            height: 65vh; /* Dibuat sangat tinggi dan lega di HP */
+            min-height: 400px;
             background: #160611;
             border: 3px solid white;
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
             margin: 20px 0;
             display: none;
-            box-shadow: 0 8px 20px rgba(142, 40, 102, 0.15);
+            box-shadow: 0 8px 25px rgba(142, 40, 102, 0.2);
         }
 
         .drive-video-frame {
@@ -338,12 +339,11 @@
             border: none;
         }
 
-        /* --- TEKS BIASA "buka video diatas" YANG DIPERBESAR --- */
         .instruction-text {
             font-size: 20px;
             font-weight: 800;
             color: #e60078;
-            margin: 20px 0 10px;
+            margin: 15px 0 10px;
             text-shadow: 1px 1px #ffd0e8;
             letter-spacing: 0.5px;
         }
@@ -365,12 +365,12 @@
 
         @media (max-width: 480px) {
             .page {
-                padding: 10px;
+                padding: 8px;
             }
 
             .card {
-                padding: 22px 14px;
-                border-radius: 22px;
+                padding: 25px 14px;
+                border-radius: 24px;
             }
 
             .characters-container {
@@ -421,7 +421,6 @@
 
             <div class="label">A LITTLE SURPRISE FOR YOU ✦</div>
 
-            <!-- GAMBAR KEDUA KARAKTER HEWAN DENGAN BALON PERCAKAPAN -->
             <div class="characters-container">
                 
                 <!-- Uchup -->
@@ -446,17 +445,15 @@
 
             <h1>
                 HAPPY
-                <span>GRADUATION Lisaaa!</span>
+                <span>GRADUATION!</span>
             </h1>
 
             <p class="subtitle">
-                "A special little page to celebrate your big day. I'm so happy for your achievement, 
-                it's so nice to see you smiling like you always do, and I'm genuinely overjoyed!
-                -GIO
+                A special little page to celebrate your big day. I'm so happy for your achievement, it's so nice to see you smiling like you always do, and I'm genuinely overjoyed! 💗
             </p>
 
             <button class="primary" onclick="continuePage()">
-                Lihat Video disebelah 🎬 →
+                Lihat Video Wisuda 🎬 →
             </button>
 
             <div class="hint">
@@ -478,25 +475,23 @@
             </h1>
 
             <p class="subtitle">
-                Ditonton yaa
+                Isinya cuma video aku aja sih, nikmatin ya! 🌷🎀
             </p>
 
-            <!-- KOTAK PEMUTAR VIDEO GOOGLE DRIVE -->
+            <!-- KOTAK PEMUTAR VIDEO GOOGLE DRIVE YANG BESAR -->
             <div class="video-box" id="videoPlaceholder" onclick="playDriveVideo()">
                 <div class="play-icon">▶️</div>
-                <h2>Klik untuk Putar Video Wisuda🌷</h2>
-               
+                <h2>Klik untuk Putar Video Wisuda</h2>
+                <p>Spesial untuk hari kelulusanmu 🌷</p>
             </div>
 
-            <!-- Pembungkus Video Landscape 16:9 yang Lebar dan Utuh di HP -->
+            <!-- Frame Video Google Drive yang Diperbesar -->
             <div class="video-container-wrapper" id="videoWrapper">
                 <iframe class="drive-video-frame" src="https://drive.google.com/file/d/1oTPvMSV1PHU2dnfXno0gGFOp5D6mlwRK/preview" allow="autoplay" allowfullscreen></iframe>
             </div>
 
-            <!-- TEKS BIASA "buka video diatas" YANG DIPERBESAR -->
             <div class="instruction-text">
-                👆 buka video diatas yaa, bisa diperbesar kok
-                semoga sukaa sama hadiah nyaaa
+                👆 buka video diatas
             </div>
 
             <p class="subtitle" style="margin-top: 15px;">
@@ -573,7 +568,6 @@
             window.scrollTo(0, 0);
         }
 
-        // Fungsi Memunculkan Video Google Drive Format Landscape
         function playDriveVideo() {
             const videoWrapper = document.getElementById("videoWrapper");
             const placeholder = document.getElementById("videoPlaceholder");
