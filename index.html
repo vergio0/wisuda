@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -44,6 +44,7 @@
                 opacity: .4;
                 transform: scale(.7) rotate(0);
             }
+
             50% {
                 opacity: 1;
                 transform: scale(1.3) rotate(20deg);
@@ -55,12 +56,14 @@
             font-size: 40px;
             animation: float 4s infinite ease-in-out;
             z-index: 1;
+            pointer-events: none;
         }
 
         @keyframes float {
             0%, 100% {
                 transform: translateY(0) rotate(-8deg);
             }
+
             50% {
                 transform: translateY(-18px) rotate(8deg);
             }
@@ -84,8 +87,9 @@
             border: 3px solid white;
             border-radius: 35px;
             background: rgba(255, 248, 253, .94);
-            box-shadow: 0 18px 0 rgba(194, 0, 103, .13),
-                        0 25px 60px rgba(128, 0, 66, .2);
+            box-shadow:
+                0 18px 0 rgba(194, 0, 103, .13),
+                0 25px 60px rgba(128, 0, 66, .2);
             animation: appear .8s ease;
         }
 
@@ -94,6 +98,7 @@
                 opacity: 0;
                 transform: translateY(25px) scale(.96);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -118,8 +123,13 @@
         }
 
         @keyframes capMove {
-            0%, 100% { transform: rotate(-8deg); }
-            50% { transform: rotate(8deg) translateY(-8px); }
+            0%, 100% {
+                transform: rotate(-8deg);
+            }
+
+            50% {
+                transform: rotate(8deg) translateY(-8px);
+            }
         }
 
         h1 {
@@ -143,13 +153,6 @@
             font-size: 19px;
             line-height: 1.6;
             max-width: 550px;
-        }
-
-        .from {
-            color: #e60078;
-            font-size: 25px;
-            font-weight: 800;
-            margin: 20px 0 30px;
         }
 
         button {
@@ -268,10 +271,6 @@
             .subtitle {
                 font-size: 17px;
             }
-
-            .from {
-                font-size: 21px;
-            }
         }
     </style>
 </head>
@@ -280,8 +279,9 @@
 
     <div class="background" id="background"></div>
 
+    <!-- Dekorasi melayang tanpa emoji hati -->
     <div class="floating" style="top:8%;left:7%">🎀</div>
-    <div class="floating" style="top:12%;right:8%;animation-delay:.7s">💖</div>
+    <div class="floating" style="top:12%;right:8%;animation-delay:.7s">⭐</div>
     <div class="floating" style="bottom:12%;left:8%;animation-delay:1s">🌸</div>
     <div class="floating" style="bottom:9%;right:7%;animation-delay:.5s">✨</div>
 
@@ -303,10 +303,8 @@
                 You deserve all the happiness in the world! 💗
             </p>
 
-            <div class="from">with love, from Vergio ♡</div>
-
             <button class="primary" onclick="continuePage()">
-                Klik untuk Lanjutkan 💌 →
+                Lihat Video Wisuda 🎬 →
             </button>
 
             <div class="hint">
@@ -320,7 +318,7 @@
     <section class="page" id="page2">
         <div class="card">
 
-            <div class="label">YOUR SPECIAL MOMENT 💗</div>
+            <div class="label">YOUR SPECIAL MOMENT ✦</div>
 
             <h1 style="font-size:clamp(35px,7vw,60px);margin-top:25px">
                 A LITTLE SURPRISE
@@ -328,7 +326,7 @@
             </h1>
 
             <p class="subtitle">
-                Ada sesuatu yang spesial untuk kamu. 💕🎀
+                Ada sesuatu yang spesial untuk kamu. 🌷🎀
             </p>
 
             <div class="video-box" id="videoPlaceholder">
@@ -347,7 +345,7 @@
 
             <p class="subtitle">
                 Congratulations on your graduation!
-                May your next chapter be full of beautiful things. 💖
+                May your next chapter be full of beautiful things. ✨
             </p>
 
             <br>
@@ -367,7 +365,7 @@
             const star = document.createElement("span");
 
             star.className = "sparkle";
-            star.textContent = ["✦", "✧", "✷", "♡"][
+            star.textContent = ["✦", "✧", "✷", "☆"][
                 Math.floor(Math.random() * 4)
             ];
 
@@ -379,10 +377,10 @@
             background.appendChild(star);
         }
 
-        // Efek confetti
+        // Efek dekorasi jatuh tanpa emoji hati
         function confettiBurst() {
             const decorations = [
-                "💖", "🌸", "✨", "🎀", "💕", "✦", "🎉"
+                "🌸", "✨", "🎀", "✦", "🎉", "⭐", "🌷"
             ];
 
             for (let i = 0; i < 60; i++) {
@@ -451,3 +449,4 @@
 
 </body>
 </html>
+```
